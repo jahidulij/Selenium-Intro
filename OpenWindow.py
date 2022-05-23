@@ -23,17 +23,7 @@ current_url = driver.current_url
 print("Current URL: " + current_url)
 
 # New tab
-# new_tab = driver.find_element(By.ID, "opentab").click()
-# handles = []
-# handles = driver.window_handles
-# for handle in handles:
-#     print(handle)
-# newHandle = handles[1]
-# driver.switch_to.window(newHandle)
-# print(driver.current_url)
-
-# New window
-new_window = driver.find_element(By.ID, "openwindow").click()
+new_tab = driver.find_element(By.ID, "opentab").click()
 handles = []
 handles = driver.window_handles
 for handle in handles:
@@ -41,6 +31,16 @@ for handle in handles:
 newHandle = handles[1]
 driver.switch_to.window(newHandle)
 print(driver.current_url)
+
+# New window
+# new_window = driver.find_element(By.ID, "openwindow").click()
+# handles = []
+# handles = driver.window_handles
+# for handle in handles:
+#     print(handle)
+# newHandle = handles[1]
+# driver.switch_to.window(newHandle)
+# print(driver.current_url)
 
 # Close the drivers
 driver.close()

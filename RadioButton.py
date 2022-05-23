@@ -14,7 +14,7 @@ driver.get(base_url)
 # Maximize the window
 driver.maximize_window()
 driver.implicitly_wait(10)
-# Pause for 2 minutes
+# Pause for 2 seconds
 time.sleep(2)
 # Get current url
 current_url = driver.current_url

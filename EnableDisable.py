@@ -16,7 +16,7 @@ base_url = "https://courses.letskodeit.com/practice"
 driver.get(base_url)
 # Maximize the window
 driver.maximize_window()
-# Pause for 2 minutes
+# Pause for 2 seconds
 time.sleep(2)
 
 enable_element = driver.find_element(By.ID, "enabled-button")
@@ -24,7 +24,7 @@ disable_element = driver.find_element(By.ID, "disabled-button")
 
 element = driver.find_element(By.ID, "enabled-example-input")
 
-disable_element.click()
+# disable_element.click()
 print(element.is_enabled())
 
 if element.is_enabled() == True:

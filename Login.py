@@ -15,7 +15,7 @@ base_url = "https://courses.letskodeit.com/practice"
 driver.get(base_url)
 # Maximize the window
 driver.maximize_window()
-# Pause for 2 minutes
+# Pause for 2 seconds
 time.sleep(2)
 # Get current url
 current_url = driver.current_url
@@ -32,7 +32,7 @@ if driver.title == "My Courses":
 else:
     print("Login Unsuccessful")
     element = WebDriverWait(driver, 10).until(
-        EC.presence_of_element_located((By.XPATH, "//span[@class='dynamic-text help-block']"))
+        EC.presence_of_element_located((By.XPATH, "//span[contains(text(),'Your username or password is invalid. Please try a')]"))
     )
     print(element.text)
 

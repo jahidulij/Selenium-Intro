@@ -15,7 +15,7 @@ base_url = "https://courses.letskodeit.com/practice"
 driver.get(base_url)
 # Maximize the window
 driver.maximize_window()
-# Pause for 2 minutes
+# Pause for 2 seconds
 time.sleep(2)
 # Get current url
 current_url = driver.current_url
@@ -25,9 +25,10 @@ element = driver.find_element(By.ID, "carselect")
 sel = Select(element)
 # Select dropdown by value
 benz = sel.select_by_value("benz")
-# time.sleep(3)
+time.sleep(3)
 # Select dropdown by visible text
 honda = sel.select_by_visible_text("Honda")
+time.sleep(3)
 # Select dropdown by index
 bmw = sel.select_by_index(0)
 

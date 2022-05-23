@@ -15,7 +15,8 @@ driver.maximize_window()
 driver.implicitly_wait(5)
 careers = driver.find_element(By.XPATH, "//a[contains(text(),'Careers')]")
 driver.execute_script("arguments[0].scrollIntoView()", careers)
-time.sleep(5)
+time.sleep(2)
+careers.click()
 # elements = driver.find_elements(By.XPATH, "//h4[contains(text(),'')]")
 #
 # for element in elements:

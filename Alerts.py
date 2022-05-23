@@ -18,9 +18,10 @@ time.sleep(2)
 
 driver.find_element(By.XPATH, "//button[contains(text(),'Click Me')]").click()
 time.sleep(3)
-# driver.switch_to.alert.accept()
-driver.switch_to.alert.dismiss()
-
+driver.switch_to.alert.accept()
+# driver.switch_to.alert.dismiss()
+result = driver.find_element(By.XPATH, "//p[@id='demo']")
+print(result.text)
 time.sleep(5)
 # Close the drivers
 driver.close()

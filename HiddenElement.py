@@ -5,8 +5,6 @@ from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.support.select import Select
 from selenium.webdriver.common.by import By
 from webdriver_manager.chrome import ChromeDriverManager
-from selenium.webdriver.support.ui import WebDriverWait
-from selenium.webdriver.support import expected_conditions as EC
 
 # Setup Chrome browser
 driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()))
@@ -16,20 +14,20 @@ base_url = "https://courses.letskodeit.com/practice"
 driver.get(base_url)
 # Maximize the window
 driver.maximize_window()
-# Pause for 2 minutes
+# Pause for 2 seconds
 time.sleep(2)
 
 hide = driver.find_element(By.ID, "hide-textbox")
 show = driver.find_element(By.ID, "show-textbox")
 
 element = driver.find_element(By.ID, "displayed-text")
-hide.click()
+# hide.click()
 present = element.is_displayed()
 
 
 if present == True:
     element.send_keys("Hello!")
-    hide.click()
+    # hide.click()
 else:
     show.click()
     element.send_keys("Hi!!!")

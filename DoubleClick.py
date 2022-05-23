@@ -14,7 +14,7 @@ base_url = "https://testautomationpractice.blogspot.com/"
 driver.get(base_url)
 # Maximize the window
 driver.maximize_window()
-# Pause for 2 minutes
+# Pause for 2 seconds
 time.sleep(2)
 
 copy_text = driver.find_element(By.XPATH, "//button[contains(text(),'Copy Text')]")
