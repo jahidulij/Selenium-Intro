@@ -2,16 +2,14 @@ import time
 
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
-from selenium.webdriver.support.select import Select
 from selenium.webdriver.common.by import By
 from webdriver_manager.chrome import ChromeDriverManager
-
 
 # Setup Chrome browser
 driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()))
 
 # Go to the mentioned URL
-base_url = "https://courses.letskodeit.com/practice"
+base_url = "https://www.worldometers.info/"
 driver.get(base_url)
 # Maximize the window
 driver.maximize_window()
@@ -21,22 +19,18 @@ time.sleep(2)
 current_url = driver.current_url
 print("Current URL: " + current_url)
 
-# Get multi select list
-multi_list = driver.find_element(By.ID, "multiple-select-example")
-sel = Select(multi_list)
-elements = sel.options
+title1 = driver.find_element(By.XPATH, "//div[contains(text(),'World Population')]")
+print(title1.text)
 
-# elements = driver.find_elements(By.ID, "multiple-select-example")
+title2 = driver.find_element(By.XPATH, "//a[contains(text(),'Current World Population')]")
+item_values = driver.find_elements(By.XPATH, "//span[@class='counter-item']")
+item_counts = driver.find_elements(By.XPATH, "//span[@class='counter-number']")
 
-for element in elements:
-    print(element.text)
-
-# select all the elements
-sel.select_by_index(1)
-sel.select_by_visible_text("Apple")
-sel.select_by_value("peach")
+contact = driver.find_element(By.XPATH, "//a[contains(text(),'contact')]")
+driver.execute_script("arguments[0].scrollIntoView()", contact)
+time.sleep(5)
 
 
-time.sleep(3)
+
 # Close the drivers
 driver.close()

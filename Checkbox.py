@@ -34,8 +34,6 @@ for element in elements:
         element.click()
         print(element.text)
 
-
-
 time.sleep(3)
 # Close the drivers
 driver.close()

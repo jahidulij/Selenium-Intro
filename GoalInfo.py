@@ -38,10 +38,11 @@ for match in matches:
     a = match.find_element(By.XPATH, './td[4]').text
     away_team.append(a)
     # print(d + " | " + home + " | " + s + " | " + a)
+
 time.sleep(2)
 driver.quit()
 
-df = pd.DataFrame({"date": date, "home_team": home_team, "score": score, "away_team": away_team})
+df = pd.DataFrame({"Date": date, "Home Team": home_team, "Score": score, "Away Team": away_team})
 df.to_csv("football_data.csv", index=False)
 print(df)
 
